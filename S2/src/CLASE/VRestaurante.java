@@ -83,7 +83,7 @@ public class VRestaurante extends JFrame {
 		contentPane.add(btnNewButton_1_1_1);
 		
 		JLabel lblMen = new JLabel("MENÚ");
-		lblMen.setBounds(175, 31, 60, 17);
+		lblMen.setBounds(177, 45, 60, 17);
 		contentPane.add(lblMen);
 
 	}
