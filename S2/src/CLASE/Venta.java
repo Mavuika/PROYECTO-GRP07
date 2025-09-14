@@ -6,11 +6,13 @@ public class Venta {
 	 private Producto producto;
 	 private int cantidadVendida;
 	 private LocalDateTime fecha;
+	 private double precio;
 
- public Venta(Producto producto, int cantidadVendida) {
+ public Venta(Producto producto, int cantidadVendida, int precio) {
 	  this.producto = producto;
 	  this.cantidadVendida = cantidadVendida;
 	  this.fecha = LocalDateTime.now();
+	  this.precio = precio;
 }
 
  public double getTotal() {

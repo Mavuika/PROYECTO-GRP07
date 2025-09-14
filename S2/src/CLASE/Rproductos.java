@@ -67,7 +67,7 @@ public class Rproductos extends JFrame {
 				dispose();
 			}
 		});
-		btnRegresar.setBounds(10, 316, 105, 27);
+		btnRegresar.setBounds(10, 305, 105, 27);
 		contentPane.add(btnRegresar);
 		
 		JButton btnNewButton = new JButton("Reporte Producto");
@@ -76,7 +76,7 @@ public class Rproductos extends JFrame {
 				do_btnNewButton_actionPerformed(e);
 			}
 		});
-		btnNewButton.setBounds(10, 114, 131, 21);
+		btnNewButton.setBounds(10, 114, 147, 21);
 		contentPane.add(btnNewButton);
 		
 		scrollPane = new JScrollPane();
@@ -87,39 +87,39 @@ public class Rproductos extends JFrame {
 		scrollPane.setViewportView(txtAreaP);
 		txtAreaP.setColumns(10);
 		
-		lblNewLabel = new JLabel("Nombre :");
-		lblNewLabel.setBounds(35, 53, 45, 13);
+		lblNewLabel = new JLabel("Nombre:");
+		lblNewLabel.setBounds(37, 54, 55, 19);
 		contentPane.add(lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("Codigo :");
-		lblNewLabel_1.setBounds(35, 76, 45, 13);
+		lblNewLabel_1 = new JLabel("Código:");
+		lblNewLabel_1.setBounds(37, 84, 59, 19);
 		contentPane.add(lblNewLabel_1);
 		
-		lblNewLabel_2 = new JLabel("Precio :");
-		lblNewLabel_2.setBounds(210, 53, 45, 13);
+		lblNewLabel_2 = new JLabel("Precio:");
+		lblNewLabel_2.setBounds(210, 54, 45, 19);
 		contentPane.add(lblNewLabel_2);
 		
-		lblNewLabel_3 = new JLabel("Cantidad :");
-		lblNewLabel_3.setBounds(210, 76, 70, 13);
+		lblNewLabel_3 = new JLabel("Cantidad:");
+		lblNewLabel_3.setBounds(210, 84, 58, 19);
 		contentPane.add(lblNewLabel_3);
 		
 		txtNom = new JTextField();
-		txtNom.setBounds(90, 50, 96, 19);
+		txtNom.setBounds(275, 84, 96, 19);
 		contentPane.add(txtNom);
 		txtNom.setColumns(10);
 		
 		txtCod = new JTextField();
-		txtCod.setBounds(90, 76, 96, 19);
+		txtCod.setBounds(93, 54, 96, 19);
 		contentPane.add(txtCod);
 		txtCod.setColumns(10);
 		
 		txtPrecio = new JTextField();
-		txtPrecio.setBounds(265, 50, 96, 19);
+		txtPrecio.setBounds(275, 54, 96, 19);
 		contentPane.add(txtPrecio);
 		txtPrecio.setColumns(10);
 		
 		txtCant = new JTextField();
-		txtCant.setBounds(265, 73, 96, 19);
+		txtCant.setBounds(93, 84, 96, 19);
 		contentPane.add(txtCant);
 		txtCant.setColumns(10);
 

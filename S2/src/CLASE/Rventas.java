@@ -11,11 +11,17 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
-public class Rventas extends JFrame {
+public class Rventas extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField txtNom;
+	private JTextField txtCantidad;
+	private JTextField fieldVentas;
+	private JButton btnRegresar;
+	private JButton btnRegistrarVenta;
 
 	/**
 	 * Launch the application.
@@ -38,53 +44,72 @@ public class Rventas extends JFrame {
 	 */
 	public Rventas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 360);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(208, 12, 230, 239);
-		contentPane.add(scrollPane);
+		JLabel lblRegistroDeProductos = new JLabel("REGISTRO DE VENTAS");
+		lblRegistroDeProductos.setBounds(26, 0, 173, 33);
+		contentPane.add(lblRegistroDeProductos);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JLabel lblNewLabel = new JLabel("Nombre:");
+		lblNewLabel.setBounds(36, 44, 55, 19);
+		contentPane.add(lblNewLabel);
 		
-		JLabel lblRegistroDeVentas = new JLabel("REGISTRO DE VENTAS");
-		lblRegistroDeVentas.setBounds(34, 0, 141, 33);
-		contentPane.add(lblRegistroDeVentas);
+		txtNom = new JTextField();
+		txtNom.setBounds(96, 44, 96, 19);
+		txtNom.setColumns(10);
+		contentPane.add(txtNom);
 		
-		JButton btnRegresar = new JButton("Regresar");
-		btnRegresar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VRestaurante newframe = new VRestaurante();
-				newframe.setVisible(true);
-				dispose();
-			}
-		});
-		btnRegresar.setBounds(49, 207, 105, 27);
+		txtCantidad = new JTextField();
+		txtCantidad.setBounds(96, 74, 96, 19);
+		txtCantidad.setColumns(10);
+		contentPane.add(txtCantidad);
+		
+		JLabel lblNewLabel_3 = new JLabel("Cantidad:");
+		lblNewLabel_3.setBounds(36, 74, 58, 19);
+		contentPane.add(lblNewLabel_3);
+		
+		fieldVentas = new JTextField();
+		fieldVentas.setBounds(26, 104, 378, 165);
+		fieldVentas.setColumns(10);
+		contentPane.add(fieldVentas);
+		
+		btnRegistrarVenta = new JButton("Registrar Venta");
+		btnRegistrarVenta.addActionListener(this);
+		btnRegistrarVenta.setBounds(257, 50, 147, 30);
+		contentPane.add(btnRegistrarVenta);
+		
+		btnRegresar = new JButton("Regresar");
+		btnRegresar.addActionListener(this);
+		btnRegresar.setBounds(26, 280, 105, 27);
 		contentPane.add(btnRegresar);
-		
-		JButton btnReporte = new JButton("Reporte");
-		btnReporte.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				do_btnReporte_actionPerformed(e);
-			}
-		});
-		btnReporte.setBounds(33, 60, 85, 21);
-		contentPane.add(btnReporte);
 		
 	
 
 	}
-	
-	//Reporte
-	protected void do_btnReporte_actionPerformed(ActionEvent e) {
-	
-	}
 	void Reporte()
 	{
+		
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnRegistrarVenta) {
+			do_btnRegistrarVenta_actionPerformed(e);
+		}
+		if (e.getSource() == btnRegresar) {
+			do_btnRegresar_actionPerformed(e);
+		}
+	}
+	protected void do_btnRegresar_actionPerformed(ActionEvent e) {
+		
+		VRestaurante newframe = new VRestaurante();
+		newframe.setVisible(true);
+		dispose();
+	}
+	protected void do_btnRegistrarVenta_actionPerformed(ActionEvent e) {
+		
 		
 	}
 }
