@@ -65,6 +65,26 @@ public class Rventas extends JFrame {
 		});
 		btnRegresar.setBounds(49, 207, 105, 27);
 		contentPane.add(btnRegresar);
+		
+		JButton btnReporte = new JButton("Reporte");
+		btnReporte.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				do_btnReporte_actionPerformed(e);
+			}
+		});
+		btnReporte.setBounds(33, 60, 85, 21);
+		contentPane.add(btnReporte);
+		
+	
 
+	}
+	
+	//Reporte
+	protected void do_btnReporte_actionPerformed(ActionEvent e) {
+	
+	}
+	void Reporte()
+	{
+		
 	}
 }

@@ -53,7 +53,7 @@ public class VRestaurante extends JFrame {
 				//Código investigado en este video: https://www.youtube.com/watch?v=h2oTM6ehU-E
 			}
 		});
-		btnNewButton.setBounds(110, 85, 183, 27);
+		btnNewButton.setBounds(110, 84, 183, 27);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Registro de productos");
