@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Arreglo.Producto_Arreglo;
+
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -17,16 +20,17 @@ public class Rproductos extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JScrollPane scrollPane;
-	private JTextField txtAreaP;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
-	private JTextField txtNom;
-	private JTextField txtCod;
-	private JTextField txtPrecio;
-	private JTextField txtCant;
+	private JTextField txtcant;
+	private JTextField txtnom;
+	private JTextField txtprecio;
+	private JTextField txtcod;
+	private JScrollPane scrollpane;
+	private JTextArea txtS;
+	private JButton btnAdicionar;
 
 	/**
 	 * Launch the application.
@@ -79,14 +83,6 @@ public class Rproductos extends JFrame {
 		btnNewButton.setBounds(10, 114, 147, 21);
 		contentPane.add(btnNewButton);
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(190, 114, 231, 199);
-		contentPane.add(scrollPane);
-		
-		txtAreaP = new JTextField();
-		scrollPane.setViewportView(txtAreaP);
-		txtAreaP.setColumns(10);
-		
 		lblNewLabel = new JLabel("Nombre:");
 		lblNewLabel.setBounds(37, 54, 55, 19);
 		contentPane.add(lblNewLabel);
@@ -103,35 +99,68 @@ public class Rproductos extends JFrame {
 		lblNewLabel_3.setBounds(210, 84, 58, 19);
 		contentPane.add(lblNewLabel_3);
 		
-		txtNom = new JTextField();
-		txtNom.setBounds(275, 84, 96, 19);
-		contentPane.add(txtNom);
-		txtNom.setColumns(10);
+		txtcant = new JTextField();
+		txtcant.setBounds(275, 84, 96, 19);
+		contentPane.add(txtcant);
+		txtcant.setColumns(10);
 		
-		txtCod = new JTextField();
-		txtCod.setBounds(93, 54, 96, 19);
-		contentPane.add(txtCod);
-		txtCod.setColumns(10);
+		txtnom = new JTextField();
+		txtnom.setBounds(93, 53, 96, 19);
+		contentPane.add(txtnom);
+		txtnom.setColumns(10);
 		
-		txtPrecio = new JTextField();
-		txtPrecio.setBounds(275, 54, 96, 19);
-		contentPane.add(txtPrecio);
-		txtPrecio.setColumns(10);
+		txtprecio = new JTextField();
+		txtprecio.setBounds(275, 54, 96, 19);
+		contentPane.add(txtprecio);
+		txtprecio.setColumns(10);
 		
-		txtCant = new JTextField();
-		txtCant.setBounds(93, 84, 96, 19);
-		contentPane.add(txtCant);
-		txtCant.setColumns(10);
+		txtcod = new JTextField();
+		txtcod.setBounds(93, 84, 96, 19);
+		contentPane.add(txtcod);
+		txtcod.setColumns(10);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(187, 114, 285, 216);
+		contentPane.add(scrollPane);
+		
+		txtS = new JTextArea();
+		scrollPane.setViewportView(txtS);
+		
+		btnAdicionar = new JButton("Adicionar Producto");
+		btnAdicionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAdicionar.setBounds(10, 146, 147, 23);
+		contentPane.add(btnAdicionar);
 
 	}
+	String LeerNombre()
+	{
+		return txtnom.getText();
+	}
+	String LeerCodigo()
+	{
+		return txtcod.getText();
+	}
+	double LeerPrecio()
+	{
+		return Double.parseDouble(txtprecio.getText());
+	}
+	int LeerCantidad()
+	{
+		return Integer.parseInt(txtcant.getText());
+	}
 
-	
+	protected void do_btnAdicionar_actionPerformed(ActionEvent e) {
+		
+	}
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
-		txtAreaP.setText("");
+		txtS.setText("");
 		
 	}
 	void Reporte_producto()
 	{
-		
+		txtS.append("\n");
 	}
 }

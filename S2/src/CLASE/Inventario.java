@@ -25,7 +25,7 @@ public class Inventario {
             if (productos[i].getCodigo().equals(codigoProducto)) {
                 if (productos[i].getCantidad() >= cantidad) {
                     productos[i].setCantidad(productos[i].getCantidad() - cantidad);
-                    Venta venta = new Venta(productos[i], cantidad);
+                    Venta venta = new Venta(productos[i], cantidad, i);
                     historialVentas[totalVentas] = venta;
                     totalVentas++;
                     ingresosTotales += venta.getTotal();
