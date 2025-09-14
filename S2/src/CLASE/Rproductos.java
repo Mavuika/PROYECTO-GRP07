@@ -129,6 +129,8 @@ public class Rproductos extends JFrame {
 		btnAdicionar = new JButton("Adicionar Producto");
 		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Producto pro=new Producto(LeerNombre(), LeerCodigo(), LeerPrecio(), LeerCantidad());
+				pa.Adicionar(pro);
 			}
 		});
 		btnAdicionar.setBounds(10, 146, 147, 23);
@@ -155,12 +157,19 @@ public class Rproductos extends JFrame {
 	protected void do_btnAdicionar_actionPerformed(ActionEvent e) {
 		
 	}
+	Producto_Arreglo pa=new Producto_Arreglo();
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
 		txtS.setText("");
+		Reporte_producto();
+		txtS.append("\nCantidad de productos registrados: "+pa.Tamaño());
 		
 	}
 	void Reporte_producto()
 	{
-		txtS.append("\n");
+		txtS.append("Nombre\tCódigo○\tPrecio\tCantidad");
+		for(int i=0; i<pa.Tamaño(); i++)
+		{
+			txtS.append("\n"+pa.Obtener(i).getNombre()+"\t"+pa.Obtener(i).getCodigo()+"\t"+pa.Obtener(i).getPrecio()+"\t"+pa.Obtener(i).getCantidad());
+		}
 	}
 }

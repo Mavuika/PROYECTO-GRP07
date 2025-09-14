@@ -16,4 +16,12 @@ public void Adicionar(Producto x)
 {
 	invent.add(x);
 }
+public int Tamaño()
+{
+	return invent.size();
+}
+public Producto Obtener(int x)
+{
+	return invent.get(x);
+}
 }
