@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import Arreglo.Producto_Arreglo;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -135,6 +136,23 @@ public class Rproductos extends JFrame {
 		});
 		btnAdicionar.setBounds(10, 146, 147, 23);
 		contentPane.add(btnAdicionar);
+		
+		btnBuscar = new JButton("buscar Producto");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtS.setText("");
+				Producto pro=pa.Buscar(LeerCodigo());
+				if(pro!=null)
+				{
+					txtS.append("Nombre\tCódigo○\tPrecio\tCantidad");
+					txtS.append("\n"+pro.getNombre()+"\t"+pro.getCodigo()+"\t"+pro.getPrecio()+"\t"+pro.getCantidad());	
+				}
+				else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+			}
+			
+		});
+		btnBuscar.setBounds(10, 179, 147, 20);
+		contentPane.add(btnBuscar);
 
 	}
 	String LeerNombre()
@@ -158,6 +176,7 @@ public class Rproductos extends JFrame {
 		
 	}
 	Producto_Arreglo pa=new Producto_Arreglo();
+	private JButton btnBuscar;
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
 		txtS.setText("");
 		Reporte_producto();

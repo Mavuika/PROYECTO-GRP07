@@ -24,4 +24,13 @@ public Producto Obtener(int x)
 {
 	return invent.get(x);
 }
+public Producto Buscar(String cod)
+{
+    for(int i=0; i<Tamaño(); i++)
+    {
+        if(Obtener(i).getCodigo().equals(cod)) return Obtener(i);
+    }
+    return null;
+}
+
 }
