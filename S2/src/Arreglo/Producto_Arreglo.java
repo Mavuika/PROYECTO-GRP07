@@ -32,5 +32,9 @@ public Producto Buscar(String cod)
     }
     return null;
 }
+public void Eliminar(Producto x)
+{
+	invent.remove(x);
+}
 
 }

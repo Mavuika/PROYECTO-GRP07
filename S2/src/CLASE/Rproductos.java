@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
-public class Rproductos extends JFrame {
+public class Rproductos extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -137,7 +137,7 @@ public class Rproductos extends JFrame {
 		btnAdicionar.setBounds(10, 146, 147, 23);
 		contentPane.add(btnAdicionar);
 		
-		btnBuscar = new JButton("buscar Producto");
+		btnBuscar = new JButton("Buscar Producto");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtS.setText("");
@@ -153,6 +153,16 @@ public class Rproductos extends JFrame {
 		});
 		btnBuscar.setBounds(10, 179, 147, 20);
 		contentPane.add(btnBuscar);
+		
+		btnEliminar = new JButton("Eliminar Producto");
+		btnEliminar.addActionListener(this);
+		btnEliminar.setBounds(10, 210, 147, 23);
+		contentPane.add(btnEliminar);
+		
+		btnModificar = new JButton("Modificar Producto");
+		btnModificar.addActionListener(this);
+		btnModificar.setBounds(10, 245, 147, 23);
+		contentPane.add(btnModificar);
 
 	}
 	String LeerNombre()
@@ -177,6 +187,8 @@ public class Rproductos extends JFrame {
 	}
 	Producto_Arreglo pa=new Producto_Arreglo();
 	private JButton btnBuscar;
+	private JButton btnEliminar;
+	private JButton btnModificar;
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
 		txtS.setText("");
 		Reporte_producto();
@@ -190,5 +202,32 @@ public class Rproductos extends JFrame {
 		{
 			txtS.append("\n"+pa.Obtener(i).getNombre()+"\t"+pa.Obtener(i).getCodigo()+"\t"+pa.Obtener(i).getPrecio()+"\t"+pa.Obtener(i).getCantidad());
 		}
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnModificar) {
+			do_btnModificar_actionPerformed(e);
+		}
+		if (e.getSource() == btnEliminar) {
+			do_btnNewButton_1_actionPerformed(e);
+		}
+	}
+	protected void do_btnNewButton_1_actionPerformed(ActionEvent e) {
+		Producto pro=pa.Buscar(LeerCodigo());
+		if(pro!=null)
+		{
+			pa.Eliminar(pro);
+		}
+		else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+	}
+	protected void do_btnModificar_actionPerformed(ActionEvent e) {
+		Producto pro=pa.Buscar(LeerCodigo());
+		if(pro!=null)
+		{
+			pro.setNombre(LeerNombre());
+			pro.setPrecio(LeerPrecio());
+			pro.setCantidad(LeerCantidad());
+			Reporte_producto();
+		}
+		else JOptionPane.showMessageDialog(null, "Producto no encontrado");
 	}
 }

@@ -36,7 +36,19 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public String toString() {
+    public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public String toString() {
         return nombre + " (" + codigo + ") - $" + precio + " - Cantidad: " + cantidad;
     }
 }
