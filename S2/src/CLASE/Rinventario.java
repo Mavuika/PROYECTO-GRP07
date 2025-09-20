@@ -35,16 +35,14 @@ public class Rinventario extends JFrame {
 	 * Create the frame.
 	 */
 	public Rinventario() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("INVENTARIO");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblInventario = new JLabel("INVENTARIO");
-		lblInventario.setBounds(67, 0, 141, 33);
-		contentPane.add(lblInventario);
 		
 		JButton btnRegresar = new JButton("Regresar");
 		btnRegresar.addActionListener(new ActionListener() {

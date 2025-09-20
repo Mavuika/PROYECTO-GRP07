@@ -43,16 +43,14 @@ public class Rventas extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Rventas() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setTitle("REGISTRO DE VENTAS");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 450, 360);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblRegistroDeProductos = new JLabel("REGISTRO DE VENTAS");
-		lblRegistroDeProductos.setBounds(26, 0, 173, 33);
-		contentPane.add(lblRegistroDeProductos);
 		
 		JLabel lblNewLabel = new JLabel("Nombre:");
 		lblNewLabel.setBounds(36, 44, 55, 19);

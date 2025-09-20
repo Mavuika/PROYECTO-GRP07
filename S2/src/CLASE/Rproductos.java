@@ -53,16 +53,14 @@ public class Rproductos extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Rproductos() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setTitle("REGISTRO DE PRODUCTOS");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 498, 380);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblRegistroDeProductos = new JLabel("REGISTRO DE PRODUCTOS");
-		lblRegistroDeProductos.setBounds(25, 10, 173, 33);
-		contentPane.add(lblRegistroDeProductos);
 		
 		JButton btnRegresar = new JButton("Regresar");
 		btnRegresar.addActionListener(new ActionListener() {
@@ -72,7 +70,7 @@ public class Rproductos extends JFrame implements ActionListener {
 				dispose();
 			}
 		});
-		btnRegresar.setBounds(10, 305, 105, 27);
+		btnRegresar.setBounds(10, 290, 167, 40);
 		contentPane.add(btnRegresar);
 		
 		JButton btnNewButton = new JButton("Reporte Producto");
@@ -81,42 +79,42 @@ public class Rproductos extends JFrame implements ActionListener {
 				do_btnNewButton_actionPerformed(e);
 			}
 		});
-		btnNewButton.setBounds(10, 114, 147, 21);
+		btnNewButton.setBounds(10, 114, 167, 21);
 		contentPane.add(btnNewButton);
 		
 		lblNewLabel = new JLabel("Nombre:");
-		lblNewLabel.setBounds(37, 54, 55, 19);
+		lblNewLabel.setBounds(60, 25, 55, 19);
 		contentPane.add(lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("Código:");
-		lblNewLabel_1.setBounds(37, 84, 59, 19);
+		lblNewLabel_1.setBounds(60, 68, 59, 19);
 		contentPane.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("Precio:");
-		lblNewLabel_2.setBounds(210, 54, 45, 19);
+		lblNewLabel_2.setBounds(266, 25, 45, 19);
 		contentPane.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("Cantidad:");
-		lblNewLabel_3.setBounds(210, 84, 58, 19);
+		lblNewLabel_3.setBounds(266, 68, 58, 19);
 		contentPane.add(lblNewLabel_3);
 		
 		txtcant = new JTextField();
-		txtcant.setBounds(275, 84, 96, 19);
+		txtcant.setBounds(331, 68, 96, 19);
 		contentPane.add(txtcant);
 		txtcant.setColumns(10);
 		
 		txtnom = new JTextField();
-		txtnom.setBounds(93, 53, 96, 19);
+		txtnom.setBounds(116, 24, 96, 19);
 		contentPane.add(txtnom);
 		txtnom.setColumns(10);
 		
 		txtprecio = new JTextField();
-		txtprecio.setBounds(275, 54, 96, 19);
+		txtprecio.setBounds(331, 25, 96, 19);
 		contentPane.add(txtprecio);
 		txtprecio.setColumns(10);
 		
 		txtcod = new JTextField();
-		txtcod.setBounds(93, 84, 96, 19);
+		txtcod.setBounds(116, 68, 96, 19);
 		contentPane.add(txtcod);
 		txtcod.setColumns(10);
 		
@@ -134,7 +132,7 @@ public class Rproductos extends JFrame implements ActionListener {
 				pa.Adicionar(pro);
 			}
 		});
-		btnAdicionar.setBounds(10, 146, 147, 23);
+		btnAdicionar.setBounds(10, 146, 167, 23);
 		contentPane.add(btnAdicionar);
 		
 		btnBuscar = new JButton("Buscar Producto");
@@ -151,17 +149,17 @@ public class Rproductos extends JFrame implements ActionListener {
 			}
 			
 		});
-		btnBuscar.setBounds(10, 179, 147, 20);
+		btnBuscar.setBounds(10, 179, 167, 20);
 		contentPane.add(btnBuscar);
 		
 		btnEliminar = new JButton("Eliminar Producto");
 		btnEliminar.addActionListener(this);
-		btnEliminar.setBounds(10, 210, 147, 23);
+		btnEliminar.setBounds(10, 210, 167, 23);
 		contentPane.add(btnEliminar);
 		
 		btnModificar = new JButton("Modificar Producto");
 		btnModificar.addActionListener(this);
-		btnModificar.setBounds(10, 245, 147, 23);
+		btnModificar.setBounds(10, 245, 167, 23);
 		contentPane.add(btnModificar);
 
 	}
