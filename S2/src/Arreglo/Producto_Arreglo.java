@@ -32,6 +32,14 @@ public Producto Buscar(String cod)
     }
     return null;
 }
+public Producto Buscar(double pre)
+{
+    for(int i=0; i<Tamaño(); i++)
+    {
+        if(Obtener(i).getPrecio()==pre) return Obtener(i);
+    }
+    return null;
+}
 public void Eliminar(Producto x)
 {
 	invent.remove(x);

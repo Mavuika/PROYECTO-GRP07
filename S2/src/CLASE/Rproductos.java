@@ -69,7 +69,7 @@ public class Rproductos extends JFrame implements ActionListener {
 				dispose();
 			}
 		});
-		btnRegresar.setBounds(10, 290, 167, 40);
+		btnRegresar.setBounds(10, 323, 167, 40);
 		contentPane.add(btnRegresar);
 		
 		JButton btnReporte = new JButton("Reporte Producto");
@@ -126,23 +126,28 @@ public class Rproductos extends JFrame implements ActionListener {
 		
 		btnModificar = new JButton("Modificar Producto");
 		btnModificar.addActionListener(this);
-		btnModificar.setBounds(10, 245, 167, 23);
+		btnModificar.setBounds(10, 257, 167, 23);
 		contentPane.add(btnModificar);
 		
 		btnAdicionar_Producto = new JButton("Adicionar Producto");
 		btnAdicionar_Producto.addActionListener(this);
-		btnAdicionar_Producto.setBounds(10, 148, 167, 21);
+		btnAdicionar_Producto.setBounds(10, 163, 167, 21);
 		contentPane.add(btnAdicionar_Producto);
 		
 		btnEliminar = new JButton("Eliminar Producto");
 		btnEliminar.addActionListener(this);
-		btnEliminar.setBounds(10, 214, 167, 21);
+		btnEliminar.setBounds(10, 207, 167, 21);
 		contentPane.add(btnEliminar);
 		
-		btnBuscar = new JButton("Buscar Producto");
+		btnBuscar = new JButton("Buscar Producto (Codigo)");
 		btnBuscar.addActionListener(this);
-		btnBuscar.setBounds(10, 179, 167, 21);
+		btnBuscar.setBounds(197, 375, 275, 21);
 		contentPane.add(btnBuscar);
+		
+		btnBuscarPre = new JButton("Buscar Producto (Precio)");
+		btnBuscarPre.addActionListener(this);
+		btnBuscarPre.setBounds(197, 341, 275, 23);
+		contentPane.add(btnBuscarPre);
 
 	}
 	String LeerNombre()
@@ -170,6 +175,7 @@ public class Rproductos extends JFrame implements ActionListener {
 	private JButton btnAdicionar_Producto;
 	private JButton btnEliminar;
 	private JButton btnBuscar;
+	private JButton btnBuscarPre;
 	
 	//Reporte
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
@@ -192,6 +198,9 @@ public class Rproductos extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnBuscarPre) {
+			do_btnBuscarPre_actionPerformed(e);
+		}
 		if (e.getSource() == btnBuscar) {
 			do_btnBuscar_actionPerformed(e);
 		}
@@ -254,7 +263,7 @@ public class Rproductos extends JFrame implements ActionListener {
 	}
  }
 	
-	//Buscar
+	//Buscar por codigo
 	protected void do_btnBuscar_actionPerformed(ActionEvent e) {
 		try {
 			txtS.setText("");
@@ -269,6 +278,20 @@ public class Rproductos extends JFrame implements ActionListener {
 		catch(Exception e2) {
 			JOptionPane.showMessageDialog(this, "Ingrese el producto");
 		}			}
-	
-	
+	//Buscar por Precio
+	protected void do_btnBuscarPre_actionPerformed(ActionEvent e) {
+		try {
+			txtS.setText("");
+			Producto pro=pa.Buscar(LeerPrecio());
+			if(pro!=null)
+			{
+				txtS.append("\tNombre\tCódigo○\tPrecio\tCantidad");
+				txtS.append("\n"+pro.getNombre()+"\t"+pro.getCodigo()+"\t"+pro.getPrecio()+"\t"+pro.getCantidad());	
+			}
+			else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+		}
+		catch(Exception e2) {
+			JOptionPane.showMessageDialog(this, "Ingrese el producto");
+		}			
+	}
 }
