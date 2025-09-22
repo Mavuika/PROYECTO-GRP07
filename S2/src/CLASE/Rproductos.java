@@ -128,8 +128,13 @@ public class Rproductos extends JFrame implements ActionListener {
 		btnAdicionar = new JButton("Adicionar Producto");
 		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Producto pro=new Producto(LeerNombre(), LeerCodigo(), LeerPrecio(), LeerCantidad());
-				pa.Adicionar(pro);
+				try {
+					Producto pro=new Producto(LeerNombre(), LeerCodigo(), LeerPrecio(), LeerCantidad());
+					pa.Adicionar(pro);
+				}
+				catch(Exception e2) {
+					JOptionPane.showMessageDialog(this, "Ingrese el producto");
+				}
 			}
 		});
 		btnAdicionar.setBounds(10, 146, 167, 23);
@@ -138,14 +143,19 @@ public class Rproductos extends JFrame implements ActionListener {
 		btnBuscar = new JButton("Buscar Producto");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtS.setText("");
-				Producto pro=pa.Buscar(LeerCodigo());
-				if(pro!=null)
-				{
-					txtS.append("Nombre\tCódigo○\tPrecio\tCantidad");
-					txtS.append("\n"+pro.getNombre()+"\t"+pro.getCodigo()+"\t"+pro.getPrecio()+"\t"+pro.getCantidad());	
+				try {
+					txtS.setText("");
+					Producto pro=pa.Buscar(LeerCodigo());
+					if(pro!=null)
+					{
+						txtS.append("Nombre\tCódigo○\tPrecio\tCantidad");
+						txtS.append("\n"+pro.getNombre()+"\t"+pro.getCodigo()+"\t"+pro.getPrecio()+"\t"+pro.getCantidad());	
+					}
+					else JOptionPane.showMessageDialog(null, "Producto no encontrado");
 				}
-				else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+				catch(Exception e2) {
+					JOptionPane.showMessageDialog(this, "Ingrese el producto");
+				}
 			}
 			
 		});
@@ -188,10 +198,14 @@ public class Rproductos extends JFrame implements ActionListener {
 	private JButton btnEliminar;
 	private JButton btnModificar;
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
-		txtS.setText("");
-		Reporte_producto();
-		txtS.append("\nCantidad de productos registrados: "+pa.Tamaño());
-		
+		try {
+			txtS.setText("");
+			Reporte_producto();
+			txtS.append("\nCantidad de productos registrados: "+pa.Tamaño());
+		}
+		catch(Exception e2) {
+			JOptionPane.showMessageDialog(this, "Ingrese el producto");
+		}
 	}
 	void Reporte_producto()
 	{
@@ -210,22 +224,32 @@ public class Rproductos extends JFrame implements ActionListener {
 		}
 	}
 	protected void do_btnNewButton_1_actionPerformed(ActionEvent e) {
-		Producto pro=pa.Buscar(LeerCodigo());
-		if(pro!=null)
-		{
-			pa.Eliminar(pro);
+		try {
+			Producto pro=pa.Buscar(LeerCodigo());
+			if(pro!=null)
+			{
+				pa.Eliminar(pro);
+			}
+			else JOptionPane.showMessageDialog(null, "Producto no encontrado");
 		}
-		else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+		catch(Exception e2) {
+			JOptionPane.showMessageDialog(this, "Ingrese el producto");
+		}
 	}
 	protected void do_btnModificar_actionPerformed(ActionEvent e) {
-		Producto pro=pa.Buscar(LeerCodigo());
-		if(pro!=null)
-		{
-			pro.setNombre(LeerNombre());
-			pro.setPrecio(LeerPrecio());
-			pro.setCantidad(LeerCantidad());
-			Reporte_producto();
+		try {
+			Producto pro=pa.Buscar(LeerCodigo());
+			if(pro!=null)
+			{
+				pro.setNombre(LeerNombre());
+				pro.setPrecio(LeerPrecio());
+				pro.setCantidad(LeerCantidad());
+				Reporte_producto();
+			}
+			else JOptionPane.showMessageDialog(null, "Producto no encontrado");
 		}
-		else JOptionPane.showMessageDialog(null, "Producto no encontrado");
+		catch(Exception e2) {
+			JOptionPane.showMessageDialog(this, "Ingrese el producto");
+		}
 	}
 }
