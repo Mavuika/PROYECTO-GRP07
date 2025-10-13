@@ -238,8 +238,14 @@ public class Rproductos extends JFrame implements ActionListener {
 	//Adicionar
 	protected void do_btnAdicionar_Producto_actionPerformed(ActionEvent e) {
 		try {
-			Producto pro=new Producto(LeerNombre(), LeerCodigo(), LeerPrecio(), LeerCantidad());
-			pa.Adicionar(pro);
+			Producto proc=pa.Buscar(LeerCodigo());
+			if(proc==null)
+			{		
+				proc=new Producto(LeerNombre(), LeerCodigo(), LeerPrecio(), LeerCantidad());
+				pa.Adicionar(proc);
+				JOptionPane.showMessageDialog(null, "Producto agregado con éxito");
+			}
+			else JOptionPane.showMessageDialog(null, "Producto repetido, ingrese otro porfavor");
 		}
 		catch(Exception e2) {
 			JOptionPane.showMessageDialog(this, "Ingrese el producto");
