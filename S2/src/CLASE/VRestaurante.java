@@ -20,13 +20,15 @@ public class VRestaurante extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
-	private JMenu mnNewMenu;
-	private JMenuItem mntmNewMenuItem;
-	private JMenu mnNewMenu_1;
-	private JMenu mnNewMenu_2;
-	private JMenuItem mntmNewMenuItem_1;
-	private JMenuItem mntmNewMenuItem_2;
-	private JMenuItem mntmNewMenuItem_3;
+	private JMenu mnArchivo;
+	private JMenuItem mntmSalir;
+	private JMenu mnOpciones;
+	private JMenu mnRegistro;
+	private JMenuItem mntmRegistrarProductos;
+	private JMenuItem mntmRegistrarVentas;
+	private JMenuItem mntmRegistrarCompras; 
+	private JMenuItem mntmInventario;
+	private JMenuItem mntmAlertasStock; 
 
 	/**
 	 * Launch the application.
@@ -56,30 +58,39 @@ public class VRestaurante extends JFrame implements ActionListener {
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		mnNewMenu = new JMenu("Archivo");
-		menuBar.add(mnNewMenu);
+		mnArchivo = new JMenu("Archivo");
+		menuBar.add(mnArchivo);
 		
-		mntmNewMenuItem = new JMenuItem("Salir");
-		mntmNewMenuItem.addActionListener(this);
-		mnNewMenu.add(mntmNewMenuItem);
+		mntmSalir = new JMenuItem("Salir");
+		mntmSalir.addActionListener(this);
+		mnArchivo.add(mntmSalir);
 		
-		mnNewMenu_1 = new JMenu("Opciones");
-		menuBar.add(mnNewMenu_1);
+		mnOpciones = new JMenu("Opciones");
+		menuBar.add(mnOpciones);
 		
-		mnNewMenu_2 = new JMenu("Registro");
-		mnNewMenu_1.add(mnNewMenu_2);
+		mnRegistro = new JMenu("Registro");
+		mnOpciones.add(mnRegistro);
 		
-		mntmNewMenuItem_1 = new JMenuItem("Registrar productos");
-		mntmNewMenuItem_1.addActionListener(this);
-		mnNewMenu_2.add(mntmNewMenuItem_1);
+		mntmRegistrarProductos = new JMenuItem("Registrar productos");
+		mntmRegistrarProductos.addActionListener(this);
+		mnRegistro.add(mntmRegistrarProductos);
 		
-		mntmNewMenuItem_3 = new JMenuItem("Registrar ventas");
-		mntmNewMenuItem_3.addActionListener(this);
-		mnNewMenu_2.add(mntmNewMenuItem_3);
+		mntmRegistrarVentas = new JMenuItem("Registrar ventas");
+		mntmRegistrarVentas.addActionListener(this);
+		mnRegistro.add(mntmRegistrarVentas);
+
+		mntmRegistrarCompras = new JMenuItem("Registrar compras");
+		mntmRegistrarCompras.addActionListener(this);
+		mnRegistro.add(mntmRegistrarCompras);
 		
-		mntmNewMenuItem_2 = new JMenuItem("Inventario");
-		mntmNewMenuItem_2.addActionListener(this);
-		mnNewMenu_1.add(mntmNewMenuItem_2);
+		mntmInventario = new JMenuItem("Inventario");
+		mntmInventario.addActionListener(this);
+		mnOpciones.add(mntmInventario);
+		
+		mntmAlertasStock = new JMenuItem("Alertas de stock");
+		mntmAlertasStock.addActionListener(this);
+		mnOpciones.add(mntmAlertasStock);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,39 +98,56 @@ public class VRestaurante extends JFrame implements ActionListener {
 
 	}
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == mntmNewMenuItem) {
-			do_mntmNewMenuItem_actionPerformed(e);
+		if (e.getSource() == mntmSalir) {
+			do_mntmSalir_actionPerformed(e);
 		}
-		if (e.getSource() == mntmNewMenuItem_2) {
-			do_mntmNewMenuItem_2_actionPerformed(e);
+		if (e.getSource() == mntmInventario) {
+			do_mntmInventario_actionPerformed(e);
 		}
-		if (e.getSource() == mntmNewMenuItem_3) {
-			do_mntmNewMenuItem_3_actionPerformed(e);
+		if (e.getSource() == mntmRegistrarVentas) {
+			do_mntmRegistrarVentas_actionPerformed(e);
 		}
-		if (e.getSource() == mntmNewMenuItem_1) {
-			do_mntmNewMenuItem_1_actionPerformed(e);
+		if (e.getSource() == mntmRegistrarProductos) {
+			do_mntmRegistrarProductos_actionPerformed(e);
+		}
+		if (e.getSource() == mntmRegistrarCompras) {
+			do_mntmRegistrarCompras_actionPerformed(e);
+		}
+		if (e.getSource() == mntmAlertasStock) {
+			do_mntmAlertasStock_actionPerformed(e);
 		}
 	}
-	protected void do_mntmNewMenuItem_1_actionPerformed(ActionEvent e) {
-		//EventHandlerDeRproductos
-		Rproductos pro=new Rproductos();
+	protected void do_mntmRegistrarProductos_actionPerformed(ActionEvent e) {
+		Rproductos pro = new Rproductos();
+		pro.setLocationRelativeTo(null);
 		pro.setVisible(true);
 		dispose();
 	}
-	protected void do_mntmNewMenuItem_3_actionPerformed(ActionEvent e) {
-		//EventHandlerDeRventas
-		Rventas ven=new Rventas();
+	protected void do_mntmRegistrarVentas_actionPerformed(ActionEvent e) {
+		Rventas ven = new Rventas();
+		ven.setLocationRelativeTo(null);
 		ven.setVisible(true);
 		dispose();
 	}
-	protected void do_mntmNewMenuItem_2_actionPerformed(ActionEvent e) {
-		//EventHandlerDeInventario
-		Rinventario inv=new Rinventario();
+	protected void do_mntmRegistrarCompras_actionPerformed(ActionEvent e) {
+		Rcompras comp = new Rcompras();
+		comp.setLocationRelativeTo(null);
+		comp.setVisible(true);
+		dispose();
+	}
+	protected void do_mntmInventario_actionPerformed(ActionEvent e) {
+		Rinventario inv = new Rinventario();
+		inv.setLocationRelativeTo(null);
 		inv.setVisible(true);
 		dispose();
 	}
-	protected void do_mntmNewMenuItem_actionPerformed(ActionEvent e) {
-		//SALIDA
+	protected void do_mntmAlertasStock_actionPerformed(ActionEvent e) {
+		Ralertas alert = new Ralertas();
+		alert.setLocationRelativeTo(null);
+		alert.setVisible(true);
+		dispose();
+	}
+	protected void do_mntmSalir_actionPerformed(ActionEvent e) {
 		System.exit(0);
 	}
 }

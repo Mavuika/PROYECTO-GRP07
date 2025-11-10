@@ -170,14 +170,14 @@ public class Rproductos extends JFrame implements ActionListener {
 	protected void do_btnAdicionar_actionPerformed(ActionEvent e) {
 		
 	}
-	Producto_Arreglo pa=new Producto_Arreglo();
+	private Producto_Arreglo pa = Producto_Arreglo.getInstance();
 	private JButton btnModificar;
 	private JButton btnAdicionar_Producto;
 	private JButton btnEliminar;
 	private JButton btnBuscar;
 	private JButton btnBuscarPre;
 	
-	//Reporte
+
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
 		try {
 			txtS.setText("");
@@ -190,6 +190,7 @@ public class Rproductos extends JFrame implements ActionListener {
 	}
 	void Reporte_producto()
 	{
+		
 		txtS.append("Nombre\tCódigo\tPrecio\tCantidad");
 		for(int i=0; i<pa.Tamaño(); i++)
 		{
@@ -215,12 +216,12 @@ public class Rproductos extends JFrame implements ActionListener {
 		}
 	}
 	
-	//Modificar
+
 	protected void do_btnModificar_actionPerformed(ActionEvent e) {
-		//si se ingreso el dato o no 
+
 		try {
 			Producto pro=pa.Buscar(LeerCodigo());
-			//	si el producto esta o no
+
 			if(pro!=null)
 			{
 				pro.setNombre(LeerNombre());
@@ -235,7 +236,7 @@ public class Rproductos extends JFrame implements ActionListener {
 		}
 	}
 	
-	//Adicionar
+
 	protected void do_btnAdicionar_Producto_actionPerformed(ActionEvent e) {
 		try {
 			Producto proc=pa.Buscar(LeerCodigo());
@@ -253,7 +254,7 @@ public class Rproductos extends JFrame implements ActionListener {
 	
 	}
 }	
-	//Eliminar
+
 	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
 	
 	try {
@@ -269,7 +270,7 @@ public class Rproductos extends JFrame implements ActionListener {
 	}
  }
 	
-	//Buscar por codigo
+
 	protected void do_btnBuscar_actionPerformed(ActionEvent e) {
 		try {
 			txtS.setText("");
@@ -284,7 +285,7 @@ public class Rproductos extends JFrame implements ActionListener {
 		catch(Exception e2) {
 			JOptionPane.showMessageDialog(this, "Ingrese el producto");
 		}			}
-	//Buscar por Precio
+
 	protected void do_btnBuscarPre_actionPerformed(ActionEvent e) {
 		try {
 			txtS.setText("");

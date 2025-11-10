@@ -24,8 +24,8 @@ public class Inventario {
         for (int i = 0; i < totalProductos; i++) {
             if (productos[i].getCodigo().equals(codigoProducto)) {
                 if (productos[i].getCantidad() >= cantidad) {
-                    productos[i].setCantidad(productos[i].getCantidad() - cantidad);
-                    Venta venta = new Venta(productos[i], cantidad, i);
+                    productos[i].setCantidad(productsafe(productos[i].getCantidad() - cantidad));
+                    Venta venta = new Venta(productos[i], cantidad);
                     historialVentas[totalVentas] = venta;
                     totalVentas++;
                     ingresosTotales += venta.getTotal();
@@ -34,6 +34,10 @@ public class Inventario {
             }
         }
         return false;
+    }
+
+    private int productsafe(int valor) {
+        return Math.max(valor, 0);
     }
 
     public String mostrarInventario() {
@@ -56,4 +60,3 @@ public class Inventario {
         return ingresosTotales;
     }
 }
-
