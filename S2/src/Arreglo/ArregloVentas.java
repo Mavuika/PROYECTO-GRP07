@@ -22,7 +22,6 @@ public class ArregloVentas {
         return ventas.size();
     }
     
-    // Buscar venta por id
     public Venta buscarPorId(int id) {
         for (Venta v : ventas) {
             if (v.getId() == id) return v;
@@ -30,16 +29,14 @@ public class ArregloVentas {
         return null;
     }
     
-    // Anular venta y dejar registro del motivo (no hace la reversión de stock por sí mismo)
     public boolean anularVenta(int id, String motivo) {
         Venta v = buscarPorId(id);
         if (v == null) return false;
-        if (v.isAnulada()) return false; // ya anulada
+        if (v.isAnulada()) return false; 
         v.anular(motivo);
         return true;
     }
     
-    // Listar ventas por método de pago
     public ArrayList<Venta> listarPorMetodoPago(String metodo) {
         ArrayList<Venta> resultado = new ArrayList<>();
         for (Venta v : ventas) {

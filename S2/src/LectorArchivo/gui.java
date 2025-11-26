@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -73,6 +75,7 @@ public class gui extends JFrame implements ActionListener {
 	//ABRE UN JFILECHOOSER, LO QUE NOS PERMITIRA ESCOGER EL ARCHIVO EN UNA VENTANA 
 	protected void do_btnLeerArchivo_actionPerformed(ActionEvent e) {
 		JFileChooser chooser = new JFileChooser("datos");
+		chooser.setFileFilter(new FileNameExtensionFilter("Archivos de texto y Excel", "txt", "xls", "xlsx"));
 		//DEVUELVE LA CARPETA DATOS
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		int seleccion = chooser.showOpenDialog(this);
