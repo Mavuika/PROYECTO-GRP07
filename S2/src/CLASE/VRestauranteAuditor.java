@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import LectorArchivo.LeerArchivo;
+import LectorArchivo.gui;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -23,11 +27,6 @@ public class VRestauranteAuditor extends JFrame implements ActionListener {
     private JMenu mnArchivo;
     private JMenuItem mntmSalir;
     private JMenu mnOpciones;
-    private JMenu mnRegistro;
-    private JMenuItem mntmRegistrarProductos;
-    private JMenuItem mntmRegistrarCompras; 
-    private JMenuItem mntmRegistrarPedidos;
-    private JMenuItem mntmRegistrarEmpleados; // nuevo
     private JMenuItem mntmInventario;
 
     /**
@@ -68,26 +67,7 @@ public class VRestauranteAuditor extends JFrame implements ActionListener {
         mnOpciones = new JMenu("Opciones");
         menuBar.add(mnOpciones);
         
-        mnRegistro = new JMenu("Registro");
-        mnOpciones.add(mnRegistro);
-        
-        mntmRegistrarProductos = new JMenuItem("Registrar productos");
-        mntmRegistrarProductos.addActionListener(this);
-        mnRegistro.add(mntmRegistrarProductos);
-
-        mntmRegistrarCompras = new JMenuItem("Registrar compras");
-        mntmRegistrarCompras.addActionListener(this);
-        mnRegistro.add(mntmRegistrarCompras);
-
-        mntmRegistrarPedidos = new JMenuItem("Registrar pedidos");
-        mntmRegistrarPedidos.addActionListener(this);
-        mnRegistro.add(mntmRegistrarPedidos);
-
-        mntmRegistrarEmpleados = new JMenuItem("Registrar empleados");
-        mntmRegistrarEmpleados.addActionListener(this);
-        mnRegistro.add(mntmRegistrarEmpleados);
-        
-        mntmInventario = new JMenuItem("Inventario");
+        mntmInventario = new JMenuItem("Leer Registros");
         mntmInventario.addActionListener(this);
         mnOpciones.add(mntmInventario);
 
@@ -104,47 +84,11 @@ public class VRestauranteAuditor extends JFrame implements ActionListener {
         if (e.getSource() == mntmInventario) {
             do_mntmInventario_actionPerformed(e);
         }
-        if (e.getSource() == mntmRegistrarProductos) {
-            do_mntmRegistrarProductos_actionPerformed(e);
-        }
-        if (e.getSource() == mntmRegistrarCompras) {
-            do_mntmRegistrarCompras_actionPerformed(e);
-        }
-        if (e.getSource() == mntmRegistrarPedidos) {
-            do_mntmRegistrarPedidos_actionPerformed(e);
-        }
-        if (e.getSource() == mntmRegistrarEmpleados) {
-            do_mntmRegistrarEmpleados_actionPerformed(e);
-        }
-    }
-    protected void do_mntmRegistrarProductos_actionPerformed(ActionEvent e) {
-        Rproductos pro = new Rproductos();
-        pro.setLocationRelativeTo(null);
-        pro.setVisible(true);
-        dispose();
-    }
-    protected void do_mntmRegistrarCompras_actionPerformed(ActionEvent e) {
-        Rcompras comp = new Rcompras();
-        comp.setLocationRelativeTo(null);
-        comp.setVisible(true);
-        dispose();
-    }
-    protected void do_mntmRegistrarPedidos_actionPerformed(ActionEvent e) {
-        Rpedidos pedidos = new Rpedidos();
-        pedidos.setLocationRelativeTo(null);
-        pedidos.setVisible(true);
-        dispose();
-    }
-    protected void do_mntmRegistrarEmpleados_actionPerformed(ActionEvent e) {
-        Rempleados remp = new Rempleados();
-        remp.setLocationRelativeTo(null);
-        remp.setVisible(true);
-        dispose();
     }
     protected void do_mntmInventario_actionPerformed(ActionEvent e) {
-        Rinventario inv = new Rinventario();
-        inv.setLocationRelativeTo(null);
-        inv.setVisible(true);
+        gui lector = new gui();
+        lector.setLocationRelativeTo(null);
+        lector.setVisible(true);
         dispose();
     }
     protected void do_mntmSalir_actionPerformed(ActionEvent e) {

@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public final class LeerArchivo {
@@ -23,9 +24,10 @@ public final class LeerArchivo {
 
     public static String leerArchivo(String ruta) throws IOException {
         Objects.requireNonNull(ruta, "ruta no puede ser null");
-        if (ruta.toLowerCase().endsWith(".txt")) {
+        String lowerCaseRuta = ruta.toLowerCase();
+        if (lowerCaseRuta.endsWith(".txt")) {
             return leerTxt(ruta);
-        } else if (ruta.toLowerCase().endsWith(".xlsx")) {
+        } else if (lowerCaseRuta.endsWith(".xlsx") || lowerCaseRuta.endsWith(".xls")) {
             return leerXlsx(ruta);
         } else {
             throw new IOException("Formato de archivo no soportado: " + ruta);
@@ -47,7 +49,7 @@ public final class LeerArchivo {
     private static String leerXlsx(String ruta) throws IOException {
         StringBuilder sb = new StringBuilder();
         try (FileInputStream fis = new FileInputStream(ruta);
-             Workbook workbook = new XSSFWorkbook(fis)) {
+             Workbook workbook = WorkbookFactory.create(fis)) {
             Sheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
