@@ -61,16 +61,16 @@ public class Colaboradores extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblNewLabel = new JLabel("SCHRADER VALERA, MATHIAS VALENTINO");
+		lblNewLabel = new JLabel("SOLDEVILLA RIOS, PIERO ALEXANDER");
 		lblNewLabel.setBounds(59, 113, 214, 32);
 		contentPane.add(lblNewLabel);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\MS.png"));
+		label.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\PIERO.png"));
 		label.setBounds(97, 136, 126, 165);
 		contentPane.add(label);
 		
-		lbln = new JLabel("(N00437910)");
+		lbln = new JLabel("(N00400647)");
 		lbln.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbln.setBounds(118, 289, 83, 32);
 		contentPane.add(lbln);
@@ -84,16 +84,16 @@ public class Colaboradores extends JFrame implements ActionListener {
 		lbln_1.setBounds(356, 289, 83, 32);
 		contentPane.add(lbln_1);
 		
-		lblNewLabel_2 = new JLabel("SCHRADER VALERA, MATHIAS VALENTINO");
-		lblNewLabel_2.setBounds(543, 113, 214, 32);
+		lblNewLabel_2 = new JLabel("GALINDO GUERRERO, AYTHANA ALMUDENA");
+		lblNewLabel_2.setBounds(543, 113, 239, 32);
 		contentPane.add(lblNewLabel_2);
 		
 		label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\MS.png"));
+		label_2.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\AYTHANA.png"));
 		label_2.setBounds(581, 136, 126, 165);
 		contentPane.add(label_2);
 		
-		lbln_2 = new JLabel("(N00437910)");
+		lbln_2 = new JLabel("(N00381448)");
 		lbln_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbln_2.setBounds(602, 289, 83, 32);
 		contentPane.add(lbln_2);
@@ -112,16 +112,16 @@ public class Colaboradores extends JFrame implements ActionListener {
 		lbln_3.setBounds(492, 529, 83, 32);
 		contentPane.add(lbln_3);
 		
-		lblNewLabel_4 = new JLabel("SCHRADER VALERA, MATHIAS VALENTINO");
+		lblNewLabel_4 = new JLabel("DOMÍNGUEZ RAMIREZ, SERGIO ANDRE");
 		lblNewLabel_4.setBounds(155, 353, 214, 32);
 		contentPane.add(lblNewLabel_4);
 		
 		label_4 = new JLabel("");
-		label_4.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\MS.png"));
+		label_4.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\SERGIO.png"));
 		label_4.setBounds(193, 376, 126, 165);
 		contentPane.add(label_4);
 		
-		lbln_4 = new JLabel("(N00437910)");
+		lbln_4 = new JLabel("(N00362764)");
 		lbln_4.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbln_4.setBounds(214, 529, 83, 32);
 		contentPane.add(lbln_4);
@@ -137,7 +137,7 @@ public class Colaboradores extends JFrame implements ActionListener {
 		contentPane.add(btnNewButton);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\MS.png"));
+		label_1.setIcon(new ImageIcon("C:\\Users\\swank\\OneDrive\\Escritorio\\LeninFinal\\PROYECTO-GRP07\\S2\\Imagenes\\ALEJANDRO.png"));
 		label_1.setBounds(333, 136, 126, 165);
 		contentPane.add(label_1);
 
