@@ -43,6 +43,7 @@ public class Login extends JFrame implements ActionListener {
 	private String rol;
 	private int intentosFallidos;
 	private JLabel textoalerta;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -130,11 +131,19 @@ public class Login extends JFrame implements ActionListener {
 		textoalerta.setForeground(new Color(255, 0, 0));
 		textoalerta.setBounds(150, 212, 188, 14);
 		contentPane.add(textoalerta);
+		
+		btnNewButton = new JButton("Colaboradores");
+		btnNewButton.addActionListener(this);
+		btnNewButton.setBounds(300, 238, 134, 23);
+		contentPane.add(btnNewButton);
 		textoalerta.setVisible(false);
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton) {
+			do_btnNewButton_actionPerformed(e);
+		}
 		if (e.getSource() == btnIngresar) {
 			intentarIngreso();
 		}
@@ -269,5 +278,10 @@ public class Login extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Usted ha excedido los 3 intentos, intente más tarde.");
 			System.exit(0);
 		}
+	}
+	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
+		Colaboradores colab = new Colaboradores();
+		colab.setLocationRelativeTo(null);
+		colab.setVisible(true);
 	}
 }
